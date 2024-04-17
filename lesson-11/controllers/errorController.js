@@ -16,9 +16,9 @@ exports.logErrors = (err, req, res, next) => {
  * Listing 11.3 (p. 169)
  * 사용자 정의 메시지로 빠진 라우트 및 에러 대응
  */
-exports.resNotFound = (res, req) => {
+exports.resNotFound = (req, res) => {
     let errorCode = httpStatus.NOT_FOUND;
-    res.stats(errorCode);
+    res.status(errorCode);
     // res.send("404 | Not Found");
     res.sendFile(`./public/${errorCode}.html`, {
         root: './'
